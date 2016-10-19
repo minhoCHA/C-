@@ -1,0 +1,43 @@
+Script started on Tue 08 Sep 2015 10:17:37 PM PDT
+[mcha@hills ~]$ cat Restaurant.cpp
+cat: Restaurant.cpp: No such file or directory
+[mcha@hills ~]$ car RestaurantBill.cpp
+bash: car: command not found
+[mcha@hills ~]$ cat T RestaurantBill.cpp
+/**
+* Class: CS 110A
+* Description: About Restaurant Bill
+* Due Date: Sep/09/2015
+* Name: Minho Cha
+* File Name: RestaurantBill.cpp
+* Assignment #2
+*/
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+   double charge, tax, tip, total;
+
+   cout << "Enter the charge for the meal:  ";
+   cin >> charge;
+   tax = charge * 0.0675;
+   tip = (tax + charge) * 0.15;
+   total = charge + tax + tip;
+   cout << "Meal Charge: $" << setprecision(3)<< charge << endl;
+   cout << "Tax:         $" << setprecision(6)<< tax << endl;
+   cout << "Tip:         $" << setprecision(8)<< tip << endl;
+   cout << "Total:       $" << setprecision(9)<< total << endl;
+
+   cout << "Programmed by Minho Cha"<< endl;
+   return 0;
+
+}
+[mcha@hills ~]$ exit
+exit
+
+Script done on Tue 08 Sep 2015 10:18:16 PM PDT
