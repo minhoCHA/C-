@@ -1,0 +1,107 @@
+/**
+* Class: CS 110A
+* Description: This program will calculate and display the total rainfall for the year, the average monthly rainfall, and the months with the highest and lowest amounts.
+
+  - The program will let the user enter the total rainfall for each of 12 months into an array of doubles.
+  - The program won't accept negative numbers for monthly rainfall figures.
+
+* Due Date: Nov/23/2015
+* Name: Minho Cha
+* File Name: RainfallStatistics.cpp
+* Assignment #10
+*/
+
+#include<iostream>
+#include <iomanip>
+
+using namespace std;
+ 
+const int MONTHS = 12;
+double getAverage(double []);
+double getTotal(double []);
+double getLargest(double [], int &);
+double getSmallest(double [], int &);
+      
+int main()
+{
+ double rainfall[MONTHS];
+ 
+ for (int month = 0; month < MONTHS; month++)
+ {
+  cout << "Enter the rainfall (in inches) for month #";
+  cout << (month + 1) << ": ";
+   cin >> rainfall[month];
+       
+   while (rainfall[month] < 0)
+   { 
+    cout << "Rainfall must be 0 or more.\n" << "Enter again: ";
+     cin  >> rainfall[month];
+   }
+  }
+  
+  cout << fixed << showpoint << setprecision(2) << endl;
+  cout << "The total rainfall for the year is ";
+  cout << getTotal(rainfall) << " inches.\n";
+  cout << "The average rainfall for the year is ";
+  cout << getAverage(rainfall) << " inches.\n";
+  
+  int sub = 0;
+   
+  cout << "The largest amount of rainfall was ";
+  cout << getLargest(rainfall, sub) << " inches in month ";
+  cout << (sub + 1) << ".\n";
+  cout << "The smallest amount of rainfall was ";
+  cout << getSmallest(rainfall, sub) << " inches in month ";
+  cout << (sub + 1) << ".\n\n";
+  
+  cout << "Programmed by Minho Cha\n";
+
+	 return 0;
+}
+ 
+double getTotal(double rainfall[])
+{
+  double total = 0;
+
+  for (int count = 0; count < MONTHS; count++)
+  total += rainfall[count];
+
+	return total;
+}
+ 
+double getAverage(double rainfall[])
+{
+  double average = 0.0;
+  
+  average= getTotal(rainfall)/MONTHS;
+   
+	 return average;
+}
+ 
+double getLargest(double rainfall[], int &sub)
+{
+  double largest;
+
+  largest = rainfall[0];
+ 
+  for ( int month = 0; month < MONTHS; month++ ){
+   if ( rainfall[month] > largest ){
+    largest = rainfall[month];
+    sub = month;}
+    }
+	return largest;
+}
+ 
+double getSmallest(double rainfall[],  int &sub)
+{
+  double smallest;
+  
+  smallest = rainfall[0];
+ 
+  for ( int month = 0; month < MONTHS; month++){
+   if ( rainfall[month] < smallest ){
+    smallest = rainfall[month];
+    sub = month;}
+    }
+	return smallest;
+}
