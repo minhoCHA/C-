@@ -1,0 +1,88 @@
+Script started on Thu 24 Sep 2015 06:21:13 PM PDT
+[mcha@hills ~]$ cat MathTutor.cpp
+/**
+* Class: CS 110A
+* Description:
+ 1. You can enter 1 for addition, 2 for subtraction, 3 for multiplication  or 4 for exit the system.
+ 2. Each test generates two random single digit numbers to form quentions.
+ 3. You may enter the answer then program will let you know it's correct or wrong.
+ 4. If you enter the wrong answer then program will let you know the correct answer.
+ 5. For a substraction such as x1-x2, x1 is greater than or equal to x2.
+ 6. If x2 is greater then or equal to x1 then program will let you know.
+
+* Due Date: Sep/28/2015
+* Name: Minho Cha
+* File Name: MathTutor.cpp
+* Lab #5
+*/
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+
+   int choice, answer1, answer2, answer3, x1, x2;
+
+   cout << "\tMain menu\n";
+   cout << "\n\t1: Addition\n";
+   cout << "\t2: Subtraction\n";
+   cout << "\t3: Multiplication\n";
+   cout << "\t4: Exit\n";
+   cout << "\n\tEnter a choice: ";
+   cin >> choice;
+
+   unsigned seed = time(0); 
+   srand(seed);
+
+   x1 = rand() % 10+0;
+   x2 = rand() % 10+0;
+
+   switch (choice)
+   {
+      case 1: cout << "\tWhat is " << x1 << " + " << x2 << " ? ";
+	cin >> answer1;
+	 if (answer1 == x1+x2)
+	  cout << "\tCorrect" << endl;
+	 else
+	  cout << "\tYour answer is wrong." << " The correct answer is " << x1+x2 << endl;
+                break;
+
+      case 2: cout << "\tWhat is " << x1 << " - " << x2 << " ? ";
+	cin >> answer2;
+	 if ( x1>=x2 && answer2 == x1-x2)
+	  cout << "\tCorrect" << endl;
+	 else if ( x1>=x2 && answer2 != x1-x2)
+	  cout << "\tYour answer is wrong." << " The correct answer is " << x1-x2<< endl;
+	 else
+	  cout << "\tThe first number should be greater than or equal to second number." << endl; 
+		break;
+
+      case 3: cout << "\tWhat is " << x1 << " * " << x2 << " ? ";
+	cin >> answer3;
+	 if (answer3 == x1*x2)
+	  cout << "\tCorrect" << endl;
+	 else
+	  cout << "\tYour answer is wrong." << " The correct answer is " << x1*x2 << endl;
+                break;
+
+      default: cout << "\n\tExit the system." << endl;
+                break;
+   }
+
+   
+  cout << "\nProgrammed by Minho Cha" << endl;
+
+ return 0;
+
+} 
+
+[mcha@hills ~]$ exit
+exit
+
+Script done on Thu 24 Sep 2015 06:21:29 PM PDT
