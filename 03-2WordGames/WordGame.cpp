@@ -1,0 +1,51 @@
+/**
+* Class: CS 110A
+* Description: About WordGame
+* Due Date: Sep/16/2015
+* Name: Minho Cha
+* File Name: WordGame.cpp
+* Assignment #3
+*/
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+   string name, city, age, college, profession, animal, pname;
+
+   cout << "Your name: ";
+   cin >> name;
+   cout << "The name of the city: ";
+   cin >> city;
+   cout << "Your age: ";
+   cin >> age;
+   cout << "The name of a college: ";
+   cin >> college;
+   cout << "A profession: ";
+   cin >> profession;
+   cout << "A type of animal: ";
+   cin >> animal;
+   cout << "A pet's name: ";
+   cin >> pname;
+   
+   cout << "There once was a person named " << name 
+<< " who lived in " << city << "." 
+<< " At the age of " << age << ", " 
+<< name 
+<< " went to college at " << college << ". " 
+<< name << " graduated and went to work as a " 
+<< profession << ". " 
+<< "Then, " << name 
+<<" adopted " << " a(n) " << animal 
+<< " named " << pname << ". "
+<< "They both lived happily ever after!";
+
+   cout << "\nProgrammed by Minho Cha" << endl;
+
+  return 0;
+
+}
