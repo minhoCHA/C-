@@ -1,0 +1,48 @@
+/**
+* Class: CS 110A
+* Description : This program will display an n-by-n matrix.
+
+	1. This program will ask user to enter n.
+	2. And then it will display n-by-n matrix.
+	
+	*ref. Each element is 0 or 1, which is generated randomly.
+
+* Due Date: Oct/26/2015
+* Name: Minho Cha
+* File Name: Matrix.cpp
+* Lab #8
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+void printMatrix(int);
+
+void printMatrix(int n)
+{
+ srand(time(0));
+ int **pMatrix = new int*[n];
+ for(int i = 0; i < n; i++)
+  pMatrix[i] = new int[n];
+ for(int x=0; x < n; x++)
+ {
+  for (int y=0; y < n; y++)
+  {
+   pMatrix[x][y] = rand() % 2;
+   cout << pMatrix[x][y] << " ";
+  }
+  cout << endl;
+ }
+}
+
+int main()
+{
+ int number;
+ cout << "Enter a number you want: ";
+ cin >> number;
+ printMatrix(number);
+ return 0;
+}
