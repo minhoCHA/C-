@@ -1,0 +1,135 @@
+Script started on Wed 28 Oct 2015 11:15:07 PM PDT
+[mcha@hills ~]$ cat RPSGA ame.cpp
+/**
+* Class: CS 110A
+* Description : 
+
+  1. Get computer choice: When program begins, a random number in the range of 1 through 3 is generate. If number is 1, then computer has choosen "rock". If number is 2, then computer has choosen "paper". If number is 3 then computer has choosen "scissors".
+  2. Get user choice: The user is then asked for and enters their choice of "rock", "paper" of "scissors" at the keyboard.
+  3. Display user and computer choice: x=1 if  selected "rock", 2 if selected "paper" and 3 if selected "sciccors". 
+  4. Ditermine winner: Determine who has won(or tie) and print this out to the screen such that the following rules are met.
+    * If one player chooses rock and the other chooses scissors, then rock wins.
+    * If one player chooses scissors and the other chooses paper, then scissors wins.
+    * If one player chooses paper and the other chooses rock, then paper wins.
+    * If noth players make the same choice, the game is a tie.
+  5. Loop back to step 1
+	
+* Due Date: Oct/28/2015
+* Name: Minho Cha
+* File Name: RPSGame.cpp
+* Assignment #8
+*/
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int getComputerChoice();
+int getUserChoice();
+void displayChoice(int);
+void determineWinner(int, int);
+
+int main()
+{
+ cout << "\nLet's play Rock, Paper, Scissors!" << endl;
+
+ while (true)
+ {
+  int userChoice = getUserChoice();
+  if (userChoice == 4)
+  {
+    break;
+  }
+
+  cout << "You selected: ";
+  displayChoice(userChoice);
+
+
+  int computerChoice = getComputerChoice();
+ 
+  cout << "The computer selected: ";
+  displayChoice(computerChoice);
+
+  determineWinner(userChoice, computerChoice);
+ }
+
+ cout << "\nProgrammed by Minho Cha\n";
+
+ return 0;
+}
+
+int getUserChoice()
+{
+  int userChoice;
+
+  while(true)
+  {
+   cout << "Game Menu";
+   cout << "\n---------";
+   cout << "\n1) Rock";
+   cout << "\n2) Paper";
+   cout << "\n3) Scissors";
+   cout << "\n4) Quit";
+
+   cout << "\nEnter your choice: ";
+   cin >> userChoice;
+   
+   if (userChoice >= 1 && userChoice <= 4)
+   {
+     return userChoice;
+   }
+
+    cout << "\nInvalid selection. Enter 1, 2, 3, or 4: ";
+  }
+
+   // never executed
+   return 0;
+}
+
+int getComputerChoice()
+{
+  unsigned seed = time(0);
+  srand(seed);
+  int computerChoice = rand() % 3 + 1;
+
+  return computerChoice;
+}
+
+void displayChoice(int choice)
+{
+
+   if( choice == 1 )
+    cout << "Rock";
+   else if( choice == 2 )
+    cout << "Paper";
+   else if( choice == 3 )
+    cout << "Scissors";
+
+  cout << "\n";
+}
+
+void determineWinner(int userChoice, int computerChoice)
+{
+ if( userChoice == computerChoice )
+  cout << "Tie. No winner.";
+ else if( userChoice == 1 && computerChoice == 2)
+  cout << "Couputer win! Paper wraps rock.";
+ else if( userChoice == 1 && computerChoice == 3)
+  cout << "You win! Rock smashes scissors.";
+ else if( userChoice == 2 && computerChoice == 1)
+  cout << "You win! Paper wraps rock.";
+ else if( userChoice == 2 && computerChoice == 3)
+  cout << "Computer win! Scissors cut paper.";
+ else if( userChoice == 3 && computerChoice == 1)
+  cout << "Computer win! Rock smashes scissors.";
+ else if( userChoice == 3 && computerChoice == 2)
+  cout << "You win! Scissors cut papar.";
+
+ cout << "\n\n";
+}
+
+[mcha@hills ~]$ exit
+exit
+
+Script done on Wed 28 Oct 2015 11:15:15 PM PDT
