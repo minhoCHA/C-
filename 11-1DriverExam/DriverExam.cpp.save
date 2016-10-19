@@ -1,0 +1,69 @@
+/**
+* Class: CS 110A
+* Description:
+- This program grades the written portion of the driver's license exam. The exam has 20 multiple
+choice questions. Here are the correct answers:
+1.A 2.D 3.B 4.B 5.C 6.B 7.A 8.B 9.C 10.D 11.A 12.C 13.D 14.B 15.D 16.C 17.C 18.A 19.D 20.B
+- This program will ask the user to enter the student's answers for each of the 20 questions,
+and the answers will be stored in another array.
+- After the student's answers have been entered, the program will display a message indicaing
+whether the student passed of failed the exam.(A student must correctly answer 15 of the 20
+questions to pass the exam.)
+- It will then display the total number of correctly answered questions, the total number of
+incorrectly answered questions, and a list showing the question numbers of the incorrectly answered questions.
+- Only accept the letter A, B, C, or D as answers.
+* Due Date: Dec/09/2015
+* Name: Minho Cha
+* File Name: DriverExam.cpp
+* Assignment #11
+*/
+#include <iostream>
+using namespace std;
+void input(char[], char[]);
+int main()
+{
+	char SIZE[20] = {
+		'A', 'D', 'B', 'B', 'C',
+		'B', 'A', 'B', 'C', 'D',
+		'A', 'C', 'D', 'B', 'D',
+		'C', 'C', 'A', 'D', 'B'
+	};
+	char replies[20];
+	cout << "Please enter the student's answers for each of the questions.\n"
+		<< "Press Enter after typing each answer.\n"
+		<< "Please enter an A, B, C, or D for each question.\n";
+	for (int i = 0; i < 20; i++){
+		cout << "Question " << (i + 1) << ": ";
+		cin >> replies[i];
+		while (replies[i] != 'A' && replies[i] != 'B' && replies[i] != 'C' && replies[i] != 'D'){
+			cout << "The program only accept the letters A, B, C or D as answers.\n";
+			cout << "Question " << (i + 1) << ": ";
+			cin >> replies[i];
+		}
+	}
+	input(SIZE, replies);
+	cout << "\n\nProgrammed by Minho Cha\n\n";
+	return 0;
+}
+void input(char SIZE[], char replies[])
+{
+	int correctAnswer = 0;
+	for (int i = 0; i < 20; i++){
+		if (SIZE[i] == replies[i])
+			correctAnswer++;
+	}
+	if (correctAnswer >= 15){
+		cout << "\nThe student passed the exam.\n\n";
+	}
+	else{
+		cout << "\nThe student don't passed the exam.\n\n";
+	}
+	cout << "Correct Answers: " << correctAnswer << endl
+		<< "Incorrect Answers: " << 20 - correctAnswer << endl << endl;
+	cout << "Questions that were answered incorrectly.\n";
+	for (int i = 0; i <= 20; i++){
+		if (SIZE[i] != replies[i])
+			cout << (i + 1) << endl;
+	}
+}
+
