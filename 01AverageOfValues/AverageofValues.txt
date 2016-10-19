@@ -1,0 +1,43 @@
+Script started on Mon 31 Aug 2015 11:24:40 AM PDT
+[mcha@hills ~]$ cat Average  ofValues.cpp
+/**
+* Class: CS 110A
+* Description: Average of Values
+* Due Date: Aug/31/2015
+* Name: Minho Cha
+* File Name: AverageofValues.cpp
+* Lab #2 
+*/
+
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+int number;    
+   
+   int num1 = 125;
+   cout << "num1 = " << num1 << endl;
+   int num2 = -25;
+   cout << "num2 = "<< num2 << endl;
+   int num3 = 32;
+   cout << "num3 = " << num3 << endl;
+   int average = (num1+num2+num3)/3;
+   cout << "average = " << average << endl;
+
+   cout << "Programmed by Minho Cha" << endl;
+    
+   return 0;
+
+}
+[mcha@hills ~]$ cat AverageofValues.cpp[mcha@hills ~]$ a.out                  g++ AAAAA.cppnano AAAAA.cpppercentage.cpp[mcha@hills ~]$ g++ percentage.cpp [mcha@hills ~]$ nano percentage.cppAAAAA.cpp     percentage.cpp[mcha@hills ~]$ g++ percentage.cpp .cpp .cpp .cpp .cpp .cpp .cpp .cpp .cpp .cpp .cpp A.cppv.cppe.cppr.cppa.cppg.cppe.cppo.cppf.cppV.cppa.cppl.cppu.cppe.cpps.cpp
+[mcha@hills ~]$ g++ AverageofValues.cpp[mcha@hills ~]$ cat AverageofValues.cpp                       a.out
+num1 = 125
+num2 = -25
+num3 = 32
+average = 44
+Programmed by Minho Cha
+[mcha@hills ~]$ exit
+exit
+
+Script done on Mon 31 Aug 2015 11:25:23 AM PDT
