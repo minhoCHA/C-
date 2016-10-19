@@ -1,0 +1,83 @@
+Script started on Fri 18 Sep 2015 10:35:41 AM PDT
+[mcha@hills ~]$ cat script      SoftWareSales.cpp
+/**
+* Class: CS 110A
+* Description: A software company sells a package that retails for $99. Quantity discounts are like this; quantity:discount, 10-19 : 20%, 20-49 : 30%, 50-99 : 40%, 100 or more : 50%. Input the units sold and it should be greater than 0. Output's are the amount of the units sold, discount, cost.
+* Due Date: Sep/23/2015
+* Name: Minho Cha
+* File Name: SoftWareSales.cpp
+* Assignment #4
+*/
+
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+   
+   double quantity, unit, discount, cost, price;
+
+   price = 99;
+
+   cout << "Enter the units sold: ";
+   cin >> quantity;
+
+   if (quantity >= 100 && quantity > 100)
+    discount=quantity*price*0.5;
+   else if (quantity <=99 && quantity >=50)
+    discount=quantity*price*0.4;
+   else if (quantity <=49 && quantity >=20)
+    discount=quantity*price*0.3;
+   else if (quantity <=19 && quantity >=10)
+    discount=quantity*price*0.2;
+   else if (quantity <=0)
+    cout << "Units sold must be greater than zero.";
+
+
+   cost = quantity*price-discount;
+
+   if (quantity > 0)
+
+   cout << "Units sold: " << quantity << endl
+<< "Discount: $" << setprecision(2) << fixed <<discount << endl                
+<< "Cost: $" << setprecision(2) << fixed << cost;
+
+   cout << "\nProgrammed by Minho Cha" << endl;
+
+  return 0;
+
+}
+
+[mcha@hills ~]$ g
+bash: g: command not found
+[mcha@hills ~]$ ==  g++ SoftWareSales.cpp
+[mcha@hills ~]$ a.out
+Enter the units sold: 40
+Units sold: 40
+Discount: $1188.00
+Cost: $2772.00
+Programmed by Minho Cha
+[mcha@hills ~]$ a.out
+Enter the units sold: 20
+Units sold: 20
+Discount: $594.00
+Cost: $1386.00
+Programmed by Minho Cha
+[mcha@hills ~]$ a.out
+Enter the units sold: 85
+Units sold: 85
+Discount: $3366.00
+Cost: $5049.00
+Programmed by Minho Cha
+[mcha@hills ~]$ a.out
+Enter the units sold: -7
+Units sold must be greater than zero.
+Programmed by Minho Cha
+[mcha@hills ~]$ exit
+exit
+
+Script done on Fri 18 Sep 2015 10:36:44 AM PDT
