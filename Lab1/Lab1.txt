@@ -1,0 +1,32 @@
+Script started on Fri 21 Aug 2015 04:33:46 PM PDT
+[mcha@hills ~]$ cat HelloWOrld.     orld.cpp
+/**
+ * Class: CS110A
+ * Dascription: This is the first program that just writes out a simple message
+ * Due Date: 8/24/15
+ * Name: Minho Cha
+ * File Name: HelloWorld.cpp
+ * Lab #1
+ */
+#include <iostream>		//needed to perform C++ I/O
+using namespace std;
+
+int main ()
+
+{
+ cout << " Hello, World! " << endl;
+ cout << " This is my very first program. " << endl;
+ cout << " Minho Cha! " << endl;
+ cout << " programmed by Minho Cha " << endl;
+	return 0;
+}
+[mcha@hills ~]$ g++ HelloWorld.cpp
+[mcha@hills ~]$ a.out
+ Hello, World! 
+ This is my very first program. 
+ Minho Cha! 
+ programmed by Minho Cha 
+[mcha@hills ~]$ exit
+exit
+
+Script done on Fri 21 Aug 2015 04:34:19 PM PDT
