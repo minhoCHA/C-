@@ -1,0 +1,72 @@
+Script started on Wed 14 Oct 2015 02:26:15 PM PDT
+[mcha@hills ~]$ cat SalesChart.cpp
+/**
+* Class: CS 110A
+* Description : This program is about sales bar chart. It will ask you
+
+  1. To enter today's sales for five stores.
+  2. Then, this program will display a bar graph comparing each store's sales.
+
+   ref. Each bar in the bar graph is displayed by row of asterisks. Each akterisk represents $100 sales.
+		
+* Due Date: Oct/19/2015
+* Name: Minho Cha
+* File Name: SalesChart.cpp
+* Lab #7
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+ int store1, store2, store3, store4, store5, number = 0;
+
+
+ cout << "Enter today's sales for store 1: ";
+  cin >> store1;
+ cout << "Enter today's sales for store 2: ";
+  cin >> store2;
+ cout << "Enter today's sales for store 3: ";
+  cin >> store3;
+ cout << "Enter today's sales for store 4: ";
+  cin >> store4;
+ cout << "Enter today's sales for store 5: ";
+  cin >> store5;
+
+ cout << "\nSALES BAR CHART";
+ cout << "\n\n(Each * = $100)" << endl << endl;
+
+ cout << "Store 1: ";
+  for (int i = 1; i <= store1; i += 100){
+   cout << "*";}
+ cout << "\nStore 2: ";
+  for (int i = 1; i <= store2; i += 100){
+   cout << "*";}
+ cout << "\nStore 3: ";
+  for (int i = 1; i <= store3; i += 100){
+   cout << "*";}
+ cout << "\nStore 4: ";
+  for (int i = 1; i <= store4; i += 100){
+   cout << "*";}
+ cout << "\nStore 5: ";
+  for (int i = 1; i <= store5; i += 100){
+   cout << "*";}
+
+
+
+
+ 
+
+ cout << "\n\nProgrammed by Minho Cha";
+
+ return 0;
+}
+[mcha@hills ~]$ a.ou    g++ Sales         cat SalesChart.cpp[mcha@hills ~]$ a.out             cat SalesChart.cpp[mcha@hills ~]$ ca[mcha@hills ~]$ cat SalesChart.cpp  SalesChart.cpp  SalesChart.cpp g SalesChart.cpp+ SalesChart.cpp+ SalesChart.cpp
+[mcha@hills ~]$ a.  exit
+exit
+
+Script done on Wed 14 Oct 2015 02:26:47 PM PDT
