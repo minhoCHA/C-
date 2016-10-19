@@ -1,0 +1,51 @@
+Script started on Mon 07 Sep 2015 11:24:03 PM PDT
+[mcha@hills ~]$ cat percentage.cpp
+/**
+* Class: CS 110A
+* Description: About percentage
+* Due Date: Sep/07/2015
+* Name: Minho Cha
+* File Name: percentage.cpp
+* Lab #3
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+  string name;
+  int numQuestions, numCorrect;
+  double percentage;
+  cout << "Enter student's first name and last name: ";
+  cin >> name;
+
+  cout << "Number of questions on the test: ";
+  cin >> numQuestions;
+
+  cout << "Number of answers the student got correct: ";
+  cin >> numCorrect;
+  cout << endl;
+ 
+  percentage = static_cast<double>(numCorrect)/numQuestions*100;
+  cout << name<<"    "<<percentage<< "%" << endl << endl;
+
+  cout << "Programmed by Minho Cha" << endl;
+  return 0;
+
+}
+[mcha@hills ~]$ g++ percentage. .cpp
+[mcha@hills ~]$ a.out
+Enter student's first name and last name: mino
+Number of questions on the test: 40
+Number of answers the student got correct: 31
+
+mino    77.5%
+
+Programmed by Minho Cha
+[mcha@hills ~]$ exit
+exit
+
+Script done on Mon 07 Sep 2015 11:24:40 PM PDT
